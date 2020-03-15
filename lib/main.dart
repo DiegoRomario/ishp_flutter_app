@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ishp_flutter_app/ui/shared/widgets/category/category-list.widget.dart';
+import 'package:ishp_flutter_app/ui/shared/widgets/product/product-list.widget.dart';
 import 'package:provider/provider.dart';
 
 import 'blocs/home.bloc.dart';
@@ -56,6 +57,19 @@ class HomePage extends StatelessWidget {
           ),
           CategoryList(
             categories: bloc.categories,
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Text(
+            "Mais vendidos",
+            style: Theme.of(context).textTheme.headline,
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          ProductList(
+            products: bloc.products,
           )
         ],
       ),
