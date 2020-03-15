@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:ishp_flutter_app/blocs/home.bloc.dart';
+import 'package:ishp_flutter_app/ui/shared/widgets/category/category-list.widget.dart';
 import 'package:provider/provider.dart';
 
-void main() => runApp(Main());
+import 'blocs/home.bloc.dart';
+
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
@@ -35,12 +37,28 @@ class Main extends StatelessWidget {
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final HomeBloc bloc = Provider.of<HomeBloc>(context);
     return Scaffold(
-      body: Container(
-        child: Center(
-          child: Text("Ishp"),
-        ),
+        body: Padding(
+      padding: EdgeInsets.all(10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          SizedBox(
+            height: 60,
+          ),
+          Text(
+            "Categorias",
+            style: Theme.of(context).textTheme.headline,
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          CategoryList(
+            categories: bloc.categories,
+          )
+        ],
       ),
-    );
+    ));
   }
 }
