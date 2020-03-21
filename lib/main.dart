@@ -3,6 +3,7 @@ import 'package:ishp_flutter_app/ui/android/pages/home.page.dart';
 import 'package:ishp_flutter_app/ui/android/pages/tabs.pages.dart';
 import 'package:provider/provider.dart';
 
+import 'blocs/cart.bloc.dart';
 import 'blocs/home.bloc.dart';
 
 void main() => runApp(MyApp());
@@ -14,6 +15,9 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider<HomeBloc>.value(
           value: HomeBloc(),
+        ),
+        ChangeNotifierProvider<CartBloc>.value(
+          value: CartBloc(),
         ),
       ],
       child: Main(),
