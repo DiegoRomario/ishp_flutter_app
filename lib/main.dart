@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 
 import 'blocs/cart.bloc.dart';
 import 'blocs/home.bloc.dart';
+import 'blocs/user.bloc.dart';
 
 void main() => runApp(MyApp());
 
@@ -18,6 +19,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider<CartBloc>.value(
           value: CartBloc(),
+        ),
+        ChangeNotifierProvider<UserBloc>.value(
+          value: UserBloc(),
         ),
       ],
       child: Main(),
