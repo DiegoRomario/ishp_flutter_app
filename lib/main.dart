@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ishp_flutter_app/ui/shared/widgets/category/category-list.widget.dart';
-import 'package:ishp_flutter_app/ui/shared/widgets/product/product-list.widget.dart';
+import 'package:ishp_flutter_app/ui/android/pages/home.page.dart';
+import 'package:ishp_flutter_app/ui/android/pages/tabs.pages.dart';
 import 'package:provider/provider.dart';
 
 import 'blocs/home.bloc.dart';
@@ -30,49 +30,10 @@ class Main extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    final HomeBloc bloc = Provider.of<HomeBloc>(context);
-    return Scaffold(
-        body: Padding(
-      padding: EdgeInsets.all(10),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          SizedBox(
-            height: 60,
-          ),
-          Text(
-            "Categorias",
-            style: Theme.of(context).textTheme.headline,
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          CategoryList(
-            categories: bloc.categories,
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Text(
-            "Mais vendidos",
-            style: Theme.of(context).textTheme.headline,
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          ProductList(
-            products: bloc.products,
-          )
-        ],
+      home: DefaultTabController(
+        length: 3,
+        child: TabsPage(),
       ),
-    ));
+    );
   }
 }
