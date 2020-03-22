@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:ishp_flutter_app/blocs/theme.bloc.dart';
-import 'package:ishp_flutter_app/ui/android/pages/home.page.dart';
 import 'package:ishp_flutter_app/ui/android/pages/tabs.pages.dart';
 import 'package:provider/provider.dart';
 
