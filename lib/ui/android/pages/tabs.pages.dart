@@ -5,6 +5,8 @@ import 'package:ishp_flutter_app/ui/android/pages/cart.page.dart';
 import 'package:ishp_flutter_app/ui/android/pages/home.page.dart';
 import 'package:provider/provider.dart';
 
+import 'account.page.dart';
+
 class TabsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -14,9 +16,7 @@ class TabsPage extends StatelessWidget {
         children: [
           HomePage(),
           CartPage(),
-          Container(
-            color: Colors.blue,
-          )
+          AccountPage(),
         ],
       ),
       bottomNavigationBar: new TabBar(
